@@ -8,6 +8,12 @@ import './index.css';
 const queryClient = new QueryClient();
 const router = createRouter({ routeTree });
 
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof router;
+  }
+}
+
 createRoot(document.getElementById('root')!).render(
   <QueryClientProvider client={queryClient}>
     <RouterProvider router={router} />

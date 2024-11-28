@@ -5,12 +5,10 @@ import { useQuery } from '@tanstack/react-query';
 
 export const Route = createFileRoute('/')({
   component: HomeComponent,
-  validateSearch: (search: Record<string, unknown>): HiscoreSearchParams => {
-    return {
-      page: Number(search.page) || 1,
-      orderBy: (search.orderBy as HiscoreSearchParams['orderBy']) || 'floor_reached',
-    };
-  },
+  validateSearch: (search: Record<string, unknown>): HiscoreSearchParams => ({
+    page: Number(search.page) || 1,
+    orderBy: (search.orderBy as HiscoreSearchParams['orderBy']) || 'floor_reached',
+  }),
 });
 
 function HomeComponent() {
@@ -24,15 +22,11 @@ function HomeComponent() {
 
   const handleOrderByChange = (orderBy: string) => {
     navigate({
-      search: prev => ({
-        ...prev,
-        orderBy,
-        page: 1,
-      }),
+      search: { orderBy, page: 1 } as any,
     });
   };
 
-  const handlePageChange = (page: number) => navigate({ search: { page } });
+  const handlePageChange = (page: number) => navigate({ search: { page } as any });
 
   return (
     <div className='px-6 py-8'>
