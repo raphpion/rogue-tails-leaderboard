@@ -1,0 +1,19 @@
+{
+  "name": "rogue-tails-leaderboard",
+  "version": "1.0.0",
+  "description": "Rogue Tails Live Leaderboard for Project Presentation",
+  "main": "index.js",
+  "scripts": {
+    "dev": "SET \"NODE_ENV=development\" && nodemon --watch"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^11.5.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
