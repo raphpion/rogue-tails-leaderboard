@@ -30,7 +30,10 @@ function HomeComponent() {
 
   return (
     <div className='px-6 py-8'>
-      <h1 className='text-3xl font-bold mb-6'>Rogue Tails Leaderboard</h1>
+      <div className='flex items-center gap-2 mb-6'>
+        <img src='/favicon.png' width={42} />
+        <h1 className='text-3xl font-bold'>Rogue Tails Leaderboard</h1>
+      </div>
       <HiscoresTable data={data} isLoading={isLoading} orderBy={orderBy} onOrderByChange={handleOrderByChange} />
       <HiscoresPagination
         page={Number(data?.page || page)}
