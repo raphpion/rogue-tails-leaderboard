@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Rogue Tails Live Leaderboard for Project Presentation",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "SET \"NODE_ENV=development\" && nodemon --watch"
   },
